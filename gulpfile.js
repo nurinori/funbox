@@ -7,14 +7,10 @@ var gulp = require("gulp"),
     autoprefixer = require("autoprefixer"),
     minify = require("gulp-csso"),
     rename = require("gulp-rename"),
-    imagemin = require("gulp-imagemin"),
-    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-    webp = require("gulp-webp"),
     posthtml = require("gulp-posthtml"),
     del = require("del"),
     server = require("browser-sync").create(),
     run = require("run-sequence"),
-    uglify = require('gulp-uglifyjs'),
     reporter = require('postcss-reporter'),
     syntax_scss = require('postcss-scss');
 
@@ -46,36 +42,6 @@ gulp.task("style", function() {
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
-});
-
-gulp.task("webp", function () {
-  return gulp.src("source/img/**/*.{png,jpg}")
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("build/img"));
-});
-
-gulp.task("images", function () {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe((imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
-      imageminJpegRecompress({
-      loops: 4,
-      min: 65,
-      max: 85,
-      quality:'high'
-      })
-      ], {
-      verbose: true
-      })))
-    .pipe(gulp.dest("build/img"));
-});
-
-gulp.task("scripts", function() {
-  return gulp.src(["source/js/*.js"])
-    .pipe(uglify())
-    .pipe(rename("build.js"))
-    .pipe(gulp.dest("build/js"));
 });
 
 gulp.task("html", function () {
@@ -113,5 +79,5 @@ gulp.task("clean", function () {
 });
 
 gulp.task("build", function (done) {
-  run("clean", "copy", "style", "webp", "images", "scripts", "html", done);
+  run("clean", "copy", "style", "html", done);
 });

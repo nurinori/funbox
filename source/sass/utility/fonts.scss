@@ -1,0 +1,11 @@
+@font-face {
+  font-weight: 100;
+  font-family: "Exo 2";
+  font-style: normal;
+  font-display: swap;
+
+  src:
+    local("exo2.0-thin"),
+    url("../fonts/exo2.0-thin.woff2") format("woff2"),
+    url("../fonts/exo2.0-thin.woff") format("woff");
+}

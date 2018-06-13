@@ -1,0 +1,31 @@
+@mixin visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+}
+
+@mixin font-exo {
+  font-weight: 100;
+  font-family: "Exo 2", "Trebuchet MS", sans-serif;
+  font-style: normal;
+}
+
+@mixin font-main {
+  font-weight: 400;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-style: normal;
+}
+
+@mixin font-main-bold {
+  font-weight: 800;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-style: normal;
+}
