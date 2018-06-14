@@ -1,0 +1,27 @@
+.offer__item {
+  margin: 0;
+  padding: 0;
+
+  font-size: 13px;
+  line-height: 1.23;
+  text-shadow: 0 1px 0 #000000;
+
+  &--default {
+    color: $white;
+  }
+
+  &--selected {
+    color: $white;
+  }
+
+  &--disabled {
+    color: $canary;
+  }
+}
+
+.offer__link {
+  color: $blue;
+  text-decoration: none;
+
+  @include font-main-bold;
+}

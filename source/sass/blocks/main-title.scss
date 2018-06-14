@@ -1,10 +1,9 @@
 .main-title {
+  margin: 0;
+  padding: 0;
+
   font-size: 36px;
-  // точно задать
-  line-height: normal;
   color: $white;
-  // точно задать
-  letter-spacing: normal;
 
   @include font-exo;
 }
