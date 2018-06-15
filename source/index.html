@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+  <div style="display:none">
+    <include src="build/img/sprite.svg">"</include>
+  </div>
   <main class="page-main">
     <h1 class="page-main__title main-title">
       Ты сегодня покормил кота?
@@ -18,28 +21,36 @@
         Каталог вкусняшек
       </h2>
       <article class="catalog__item product">
+        <svg class="product__frame-svg" width="320" height="480" aria-hidden="true" role="presentation">
+          <use xlink:href="#s-frame"></use>
+        </svg>
         <a class="product__wrapper">
-          <header class="product__header">
-            <h1 class="product__title">
-              Нямушка<br>
-              <span class="product__key-title">
-                с фуа-гра
-              </span>
-            </h1>
-            <p class="product__subtitle">
-              Сказочное заморское яство
-            </p>
-          </header>
-          <ul class="product__desc-list">
-            <li class="product__desc-item">
-              10 порций
-            </li>
-            <li class="product__desc-item">
-              мышь в подарок
-            </li>
-          </ul>
+          <div class="product__inner">
+            <header class="product__header">
+              <h1 class="product__title">
+                Нямушка<br>
+                <span class="product__key-title">
+                  с фуа-гра
+                </span>
+              </h1>
+              <p class="product__subtitle">
+                Сказочное заморское яство
+              </p>
+              <p class="product__subtitle--selected">
+                Котэ не одобряет?
+              </p>
+            </header>
+            <ul class="product__desc-list">
+              <li class="product__desc-item">
+                10 порций
+              </li>
+              <li class="product__desc-item">
+                мышь в подарок
+              </li>
+            </ul>
+          </div>
           <p class="product__weight">
-            0,5<br>
+            0,5
             <span class="product__quantity">
               кг
             </span>
@@ -49,9 +60,8 @@
           <p class="offer__item offer__item--default">
             Чего сидишь? Порадуй котэ,
             <a class="offer__link" href="#">
-              купи
+              купи.
             </a>
-            .
           </p>
           <p class="offer__item offer__item--selected">
             Печень утки разварная с артишоками.
@@ -62,26 +72,34 @@
         </div>
       </article>
       <article class="catalog__item product">
+        <svg class="product__frame-svg" height="480" aria-hidden="true" role="presentation">
+          <use xlink:href="#s-frame"></use>
+        </svg>
         <a class="product__wrapper">
-          <header class="product__header">
-            <h1 class="product__title">
-              Нямушка<br>
-              <span class="product__key-title">
-                с рыбой
-              </span>
-            </h1>
-            <p class="product__subtitle">
-              Сказочное заморское яство
-            </p>
-          </header>
-          <ul class="product__desc-list">
-            <li class="product__desc-item">
-              40 порций
-            </li>
-            <li class="product__desc-item">
-              2 мыши в подарок
-            </li>
-          </ul>
+          <div class="product__inner">
+            <header class="product__header">
+              <h1 class="product__title">
+                Нямушка<br>
+                <span class="product__key-title">
+                  с рыбой
+                </span>
+              </h1>
+              <p class="product__subtitle">
+                Сказочное заморское яство
+              </p>
+              <p class="product__subtitle--selected">
+                Котэ не одобряет?
+              </p>
+            </header>
+            <ul class="product__desc-list">
+              <li class="product__desc-item">
+                40 порций
+              </li>
+              <li class="product__desc-item">
+                2 мыши в подарок
+              </li>
+            </ul>
+          </div>
           <p class="product__weight">
             2<br>
             <span class="product__quantity">
@@ -93,9 +111,8 @@
           <p class="offer__item offer__item--default">
             Чего сидишь? Порадуй котэ,
             <a class="offer__link" href="#">
-              купи
+              купи.
             </a>
-            .
           </p>
           <p class="offer__item offer__item--selected">
             Головы щучьи с чесноком да свежайшая сёмгушка.
@@ -106,31 +123,39 @@
         </div>
       </article>
       <article class="catalog__item product">
+        <svg class="product__frame-svg" width="320" height="480" aria-hidden="true" role="presentation">
+          <use xlink:href="#s-frame"></use>
+        </svg>
         <a class="product__wrapper">
-          <header class="product__header">
-            <h1 class="product__title">
-              Нямушка<br>
-              <span class="product__key-title">
-                с курой
-              </span>
-            </h1>
-            <p class="product__subtitle">
-              Сказочное заморское яство
-            </p>
-          </header>
-          <ul class="product__desc-list">
-            <li class="product__desc-item">
-              100 порций
-            </li>
-            <li class="product__desc-item">
-              5 мышей в подарок
-            </li>
-            <li class="product__desc-item">
-              заказчик доволен
-            </li>
-          </ul>
+          <div class="product__inner">
+            <header class="product__header">
+              <h1 class="product__title">
+                Нямушка<br>
+                <span class="product__key-title">
+                  с курой
+                </span>
+              </h1>
+              <p class="product__subtitle">
+                Сказочное заморское яство
+              </p>
+              <p class="product__subtitle--selected">
+                Котэ не одобряет?
+              </p>
+            </header>
+            <ul class="product__desc-list">
+              <li class="product__desc-item">
+                100 порций
+              </li>
+              <li class="product__desc-item">
+                5 мышей в подарок
+              </li>
+              <li class="product__desc-item">
+                заказчик доволен
+              </li>
+            </ul>
+          </div>
           <p class="product__weight">
-            5<br>
+            5
             <span class="product__quantity">
               кг
             </span>
@@ -140,9 +165,8 @@
           <p class="offer__item offer__item--default">
             Чего сидишь? Порадуй котэ,
             <a class="offer__link" href="#">
-              купи
+              купи.
             </a>
-            .
           </p>
           <p class="offer__item offer__item--selected">
             Филе из цыплят с трюфелями в бульоне.

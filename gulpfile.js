@@ -8,11 +8,16 @@ var gulp = require("gulp"),
     minify = require("gulp-csso"),
     rename = require("gulp-rename"),
     posthtml = require("gulp-posthtml"),
+    include = require("posthtml-include"),
     del = require("del"),
+    imagemin = require("gulp-imagemin"),
+    svgstore = require("gulp-svgstore"),
     server = require("browser-sync").create(),
     run = require("run-sequence"),
+    svgmin = require("gulp-svgmin"),
     reporter = require('postcss-reporter'),
     syntax_scss = require('postcss-scss');
+
 
 gulp.task("scss-lint", function() {
   var stylelintConfig = {
@@ -44,8 +49,30 @@ gulp.task("style", function() {
     .pipe(server.stream());
 });
 
+gulp.task("images", function () {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("build/img"));
+});
+
+gulp.task("sprite", function () {
+  return gulp.src("source/img/s-*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
+});
+
 gulp.task("html", function () {
   return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest("build"));
 });
 
@@ -79,5 +106,5 @@ gulp.task("clean", function () {
 });
 
 gulp.task("build", function (done) {
-  run("clean", "copy", "style", "html", done);
+  run("clean", "copy", "style", "images", "sprite", "html", done);
 });

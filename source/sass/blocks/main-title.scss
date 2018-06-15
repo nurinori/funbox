@@ -1,9 +1,10 @@
 .main-title {
   margin: 0;
-  padding: 0;
+  padding: 23px;
 
   font-size: 36px;
   color: $white;
+  text-align: center;
 
   @include font-exo;
 }

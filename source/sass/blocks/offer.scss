@@ -4,6 +4,7 @@
 
   font-size: 13px;
   line-height: 1.23;
+  text-align: center;
   text-shadow: 0 1px 0 #000000;
 
   &--default {
@@ -11,10 +12,14 @@
   }
 
   &--selected {
+    display: none;
+
     color: $white;
   }
 
   &--disabled {
+    display: none;
+
     color: $canary;
   }
 }
