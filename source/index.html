@@ -21,10 +21,10 @@
         Каталог вкусняшек
       </h2>
       <article class="catalog__item product">
-        <svg class="product__frame-svg" width="320" height="480" aria-hidden="true" role="presentation">
+        <svg class="product__frame product__frame--default" width="320" height="480" aria-hidden="true" role="presentation">
           <use xlink:href="#s-frame"></use>
         </svg>
-        <a class="product__wrapper">
+        <a class="product__wrapper" href="#">
           <div class="product__inner">
             <header class="product__header">
               <h1 class="product__title">
@@ -36,7 +36,7 @@
               <p class="product__subtitle">
                 Сказочное заморское яство
               </p>
-              <p class="product__subtitle--selected">
+              <p class="product__subtitle product__subtitle--selected">
                 Котэ не одобряет?
               </p>
             </header>
@@ -49,7 +49,7 @@
               </li>
             </ul>
           </div>
-          <p class="product__weight">
+          <p class="product__weight product__weight--default">
             0,5
             <span class="product__quantity">
               кг
@@ -72,10 +72,10 @@
         </div>
       </article>
       <article class="catalog__item product">
-        <svg class="product__frame-svg" height="480" aria-hidden="true" role="presentation">
+        <svg class="product__frame product__frame--default" height="480" aria-hidden="true" role="presentation">
           <use xlink:href="#s-frame"></use>
         </svg>
-        <a class="product__wrapper">
+        <a class="product__wrapper" href="#">
           <div class="product__inner">
             <header class="product__header">
               <h1 class="product__title">
@@ -87,7 +87,7 @@
               <p class="product__subtitle">
                 Сказочное заморское яство
               </p>
-              <p class="product__subtitle--selected">
+              <p class="product__subtitle product__subtitle--selected">
                 Котэ не одобряет?
               </p>
             </header>
@@ -100,7 +100,7 @@
               </li>
             </ul>
           </div>
-          <p class="product__weight">
+          <p class="product__weight product__weight--default">
             2<br>
             <span class="product__quantity">
               кг
@@ -123,38 +123,38 @@
         </div>
       </article>
       <article class="catalog__item product">
-        <svg class="product__frame-svg" width="320" height="480" aria-hidden="true" role="presentation">
+        <svg class="product__frame product__frame--disabled" width="320" height="480" aria-hidden="true" role="presentation">
           <use xlink:href="#s-frame"></use>
         </svg>
-        <a class="product__wrapper">
+        <a class="product__wrapper product__wrapper--disabled" href="#">
           <div class="product__inner">
             <header class="product__header">
-              <h1 class="product__title">
+              <h1 class="product__title product__title--disabled">
                 Нямушка<br>
                 <span class="product__key-title">
                   с курой
                 </span>
               </h1>
-              <p class="product__subtitle">
+              <p class="product__subtitle product__subtitle--disabled">
                 Сказочное заморское яство
               </p>
-              <p class="product__subtitle--selected">
+              <p class="product__subtitle product__subtitle--selected">
                 Котэ не одобряет?
               </p>
             </header>
             <ul class="product__desc-list">
-              <li class="product__desc-item">
+              <li class="product__desc-item product__desc-item--disabled">
                 100 порций
               </li>
-              <li class="product__desc-item">
+              <li class="product__desc-item product__desc-item--disabled">
                 5 мышей в подарок
               </li>
-              <li class="product__desc-item">
+              <li class="product__desc-item product__desc-item--disabled">
                 заказчик доволен
               </li>
             </ul>
           </div>
-          <p class="product__weight">
+          <p class="product__weight product__weight--disabled">
             5
             <span class="product__quantity">
               кг
@@ -178,5 +178,6 @@
       </article>
     </section>
   </main>
+  <script src="js/main.js"></script>
 </body>
 </html>

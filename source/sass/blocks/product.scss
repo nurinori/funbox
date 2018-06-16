@@ -5,16 +5,34 @@
   width: 320px;
 }
 
-.product__frame-svg {
+.product__frame {
   position: absolute;
-  z-index: 5;
+  z-index: -1;
 
   width: 323px;
   height: 483px;
 
-  fill: transparent;
-  stroke: $blue;
   stroke-width: 4px;
+
+  &--default {
+    stroke: $blue;
+  }
+
+  &--hover {
+    stroke: $blue-hover;
+  }
+
+  &--selected {
+    stroke: $lipstick;
+  }
+
+  &--selected-hover {
+    stroke: $lipstick-hover;
+  }
+
+  &--disabled {
+    stroke: $greyish;
+  }
 }
 
 .product__wrapper {
@@ -28,16 +46,30 @@
   margin: 0 0 18px 0;
   padding: 0 0 0 49px;
 
-  background-image: url("../img/bg-cat.png");
-  background-repeat: no-repeat;
-  background-position: -24px 207px;
-  border-radius: 12px;
-  &::before {
-     content: "";
+  text-decoration: none;
+
+
+  &::after {
+    content: "";
     position: absolute;
-     top: 0px;
+    top: 210px;
     left: 0;
-    z-index: -1;
+    z-index: -2;
+
+    width: 320px;
+    height: 268px;
+
+    background-image: url("../img/bg-cat.png");
+    background-repeat: no-repeat;
+    border-radius: 16px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
 
     width: 320px;
     height: 480px;
@@ -45,6 +77,13 @@
     background-image: url("../img/bg-white.svg");
     background-repeat: no-repeat;
     border-radius: 16px;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    &::after {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -62,8 +101,15 @@
 
   font-size: 48px;
   line-height: 1;
+  color: $black;
 
   @include font-main-bold;
+
+  &--disabled {
+    color: $greyish;
+
+    opacity: 0.5;
+  }
 }
 
 .product__key-title {
@@ -80,8 +126,16 @@
   font-size: 16px;
   color: $grey;
 
-  &--selected {
+  &--disabled {
+    color: $greyish;
+
+    opacity: 0.5;
+  }
+
+  &--selected-hover {
     display: none;
+
+    color: $lipstick-hover;
   }
 }
 
@@ -98,6 +152,12 @@
 
   line-height: 1.14;
   color: $grey;
+
+  &--disabled {
+    color: $greyish;
+
+    opacity: 0.5;
+  }
 }
 
 .product__weight {
@@ -113,8 +173,27 @@
   text-align: center;
   color: $white;
 
-  background-color: $blue;
   border-radius: 50%;
+
+  &--default {
+    background-color: $blue;
+  }
+
+  &--hover {
+    background-color: $blue-hover;
+  }
+
+  &--selected {
+    background-color: $lipstick;
+  }
+
+  &--selected-hover {
+    background-color: $lipstick-hover;
+  }
+
+  &--disabled {
+    background-color: $greyish;
+  }
 }
 
 .product__quantity {

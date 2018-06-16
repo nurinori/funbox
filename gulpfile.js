@@ -87,13 +87,14 @@ gulp.task("serve", function() {
 
   gulp.watch("source/sass/**/*.{scss,sass}", ["style"]);
   gulp.watch("source/*.html", ["html"]);
-  gulp.watch("source/js/*.js", ["scripts"]);
+  // gulp.watch("source/js/*.js", ["scripts"]);
 });
 
 gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
+    "source/js/**",
     "source/**/*.html"
   ], {
     base: "source"
